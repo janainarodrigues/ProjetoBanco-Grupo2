@@ -20,3 +20,8 @@ Para executar o projeto, basta clonar e abrir o arquivo dentro do programa Portu
 ### Importante!
 
 Projeto desenvolvido no modulo de Lógica de Programação no curso de formação de desenvolvedores FullStack Jr. Java da GenerationBrasil.
+
+Ministrado por: Jessica Lopes e Ednilson-Nascimento 
+
+
+
