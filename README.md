@@ -17,3 +17,6 @@ Para executar o projeto, basta clonar e abrir o arquivo dentro do programa Portu
 - [ ] Conta Estudantil ----   Enzo
 - [ ] Conta Especial   ----   Pietro
 
+### Importante!
+
+Projeto desenvolvido no modulo de Lógica de Programação no curso de formação de desenvolvedores FullStack Jr. Java da GenerationBrasil.
