@@ -2,7 +2,7 @@ programa
 {
 	
 	funcao inicio()
-	{	//Declaração de Variavel
+	{	//Declaração de Variavel
 		cadeia menu[6]={"Poupanca","Corrente","Especial","Empresa","Estudantil","Sair"}
 		inteiro opcao = 0
 
@@ -17,7 +17,7 @@ programa
 			escreva(x," - ",menu[x],"\n")	
 			}
 		escreva("------------\n")	
-				
+				// Final do Menu		
 		escreva("\nSelecione uma opção de 0 a 5: ")
 		leia(opcao)
 		limpa()
@@ -66,7 +66,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 742; 
+ * @POSICAO-CURSOR = 498; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
