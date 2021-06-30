@@ -11,8 +11,9 @@ Para executar o projeto, basta clonar e abrir o arquivo dentro do programa Portu
 ### Funcionalidades
 
 - [x] Menu
-- [ ] Conta Poupança
-- [ ] Conta Corrente
-- [ ] Conta Empresarial
-- [ ] Conta Estudantil
-- [ ] Conta Especial
+- [ ] Conta Poupança      -   Janaina
+- [ ] Conta Corrente      -   Valmir
+- [ ] Conta Empresarial   -   Felipe
+- [ ] Conta Estudantil    -   Enzo
+- [ ] Conta Especial      -   Pietro
+
