@@ -45,6 +45,7 @@ programa
 			escreva("MOVIMENTO - (1)DÉBITO -- (2)CRÉDITO\n")
 				se(escolher == 1)
 				escreva("A opção escolhida foi: DÉBITO")
+				escreva("TERMINAR")
 		
 			}
 		senao se(opcao == 3){
@@ -73,7 +74,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1455; 
+ * @POSICAO-CURSOR = 1479; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
