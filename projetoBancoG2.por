@@ -5,6 +5,7 @@ programa
 	{	//Declaração de Variavel
 		cadeia menu[6]={"Poupanca","Corrente","Especial","Empresa","Estudantil","Sair"}
 		inteiro opcao = 0
+		real movimentos = 0, saldo=0
 
 		//Devolução de boas vindas
 		escreva("-----------------------------\n")
@@ -17,10 +18,11 @@ programa
 			escreva(x," - ",menu[x],"\n")	
 			}
 		escreva("------------\n")	
-				// Final do Menu		
+		// Final do Menu
+		// Pedido de opção de menu
 		escreva("\nSelecione uma opção de 0 a 5: ")
 		leia(opcao)
-		limpa()
+		limpa() // limpa console
 
 		se(opcao == 0){
 			//codigo conta poupança
@@ -45,6 +47,14 @@ programa
 		escreva("-----------------------------\n")
 		escreva("   Tipo de conta: ",menu[opcao],"\n")
 		escreva("-----------------------------\n")
+
+		se(movimentos >= 10){
+			escreva("Limite de movimentações diarios!!")
+				}
+			senao se(saldo < 0){
+				escreva("Saldo não pode ficar negativo!!")
+				}
+		
 			}
 		senao se(opcao == 4){
 			//codigo conta estudantil
@@ -66,7 +76,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 498; 
+ * @POSICAO-CURSOR = 1483; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
