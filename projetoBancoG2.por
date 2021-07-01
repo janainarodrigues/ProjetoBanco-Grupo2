@@ -5,6 +5,7 @@ programa
 	{	//Declaração de Variavel
 		cadeia menu[6]={"Poupanca","Corrente","Especial","Empresa","Estudantil","Sair"}
 		inteiro opcao = 0
+		
 
 		//Devolução de boas vindas
 		escreva("-----------------------------\n")
@@ -17,7 +18,7 @@ programa
 			escreva(x," - ",menu[x],"\n")	
 			}
 		escreva("------------\n")	
-				// Final do Menu		
+				
 		escreva("\nSelecione uma opção de 0 a 5: ")
 		leia(opcao)
 		limpa()
@@ -27,12 +28,15 @@ programa
 		escreva("-----------------------------\n")
 		escreva("   Tipo de conta: ",menu[opcao],"\n")
 		escreva("-----------------------------\n")
+			
+			
 			}
 		senao se(opcao == 1){
 			//codigo conta corrente
 		escreva("-----------------------------\n")
 		escreva("   Tipo de conta: ",menu[opcao],"\n")
 		escreva("-----------------------------\n")
+		
 			}
 		senao se(opcao == 2){
 			//codigo conta especial
@@ -46,12 +50,80 @@ programa
 		escreva("   Tipo de conta: ",menu[opcao],"\n")
 		escreva("-----------------------------\n")
 			}
-		senao se(opcao == 4){
-			//codigo conta estudantil
-		escreva("-----------------------------\n")
-		escreva("   Tipo de conta: ",menu[opcao],"\n")
-		escreva("-----------------------------\n")
-			}
+		senao se(opcao == 4){ //se precionar 4 cai na ContaEstudantil
+			//Declarei minhas variáveis 
+				real limite = 5000.00, saldo = 0.0, valorDebito, valorAnterior = 0.0 , valorCredito
+				inteiro escolher, escolher2, movimento = 0
+				//interface gráfica	
+			escreva("-----------------------------\n")
+			escreva("   Tipo de conta: ", menu[opcao],"\n")
+			escreva("-----------------------------\n")
+				//para serve pra montar um loop com 10 movimentos bancários
+				para(inteiro vezes = 0; vezes<10; vezes++){  
+					escreva("Seu saldo é: " + saldo + "\n")
+					escreva("Seu saldo estudantil é: " + limite + "\n")
+					escreva("1 - Debito \n2 - Credito \n")
+					leia(escolher2)
+					se (escolher2 == 1){
+						
+					escreva("Digite o quanto você deseja retirar do fundo estudantil: \n")
+					leia(valorDebito)
+						//Se valorDebitado for maior que o saldo, prossiga
+						se(valorDebito>saldo){ 
+						escreva("Retiraremos " + valorDebito + " do seu fundo estudantil \nPressione 1 para confirmar e 2 para sair \n ")
+						leia(escolher)
+						
+							se(escolher == 1){
+							saldo += valorDebito
+							limite -= valorDebito
+							escreva("Seu atual saldo é: " + saldo +"\n")
+							escreva("Seu atual saldo do fundo estudantil é: " + limite +"\n")
+							movimento++
+							valorAnterior+=saldo
+							}
+								senao{
+								escreva("Programa Finalizado!!")
+								pare
+								}
+									se(valorAnterior == valorDebito){
+										saldo += valorDebito
+										limite -= valorDebito
+										escreva("Seu atual saldo é: " + saldo +"\n")
+										escreva("Seu atual saldo do fundo estudantil é: " + limite +"\n")
+										movimento++
+									}
+											senao{
+											escreva("Programa Finalizado!!")
+												
+											}
+										
+										}
+												se (movimento >= 10 ){
+												escreva("Limite de movimentos diário atingido! \nVolte amanhã para mais dez movimentos")
+					
+												}
+													se(limite == 0){
+													escreva("Limite Estourado")
+													pare
+												}
+					}
+													senao{
+														 escreva("1")
+														}
+												
+			
+		}
+					}
+					
+					
+					
+					
+		
+
+				
+	
+
+			//------------------------------------------------------
 		senao se(opcao == 5){
 			escreva("Programa Finalizado!!")
 			}
@@ -59,14 +131,19 @@ programa
 			escreva("Opção Inválida!!\n\n")
 			escreva("Programa Finalizado!!\n")
 			}
+			
 	}
+
 }
+
+
+
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 498; 
+ * @POSICAO-CURSOR = 3423; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
