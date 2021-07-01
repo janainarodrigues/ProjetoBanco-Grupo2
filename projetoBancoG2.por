@@ -4,7 +4,8 @@ programa
 	funcao inicio()
 	{	//Declaração de Variavel
 		cadeia menu[6]={"Poupanca","Corrente","Especial","Empresa","Estudantil","Sair"}
-		inteiro opcao = 0
+		real saldoinicial=0, saldofinal=0, debito, credito=0,saldoAnterior=0,saldoDoDia=0,deposito=0
+		inteiro opcao = 0,data=0
 
 		//Devolução de boas vindas
 		escreva("-----------------------------\n")
@@ -17,16 +18,29 @@ programa
 			escreva(x," - ",menu[x],"\n")	
 			}
 		escreva("------------\n")	
-				// Final do Menu		
+				// Final do Menu//		
 		escreva("\nSelecione uma opção de 0 a 5: ")
 		leia(opcao)
 		limpa()
-
+		
 		se(opcao == 0){
 			//codigo conta poupança
 		escreva("-----------------------------\n")
 		escreva("   Tipo de conta: ",menu[opcao],"\n")
 		escreva("-----------------------------\n")
+		escreva("Saldo em conta de :R$", saldoinicial)
+
+		escreva("\nDdata do deposito?")
+		leia(data)
+		escreva("\nInsira o valor de deposito: ")
+		leia (deposito)	
+			saldoDoDia=saldoinicial+deposito
+		
+		
+		escreva("\n",data,":Saldo em conta de:R$",saldoDoDia)
+
+
+		
 			}
 		senao se(opcao == 1){
 			//codigo conta corrente
@@ -59,6 +73,8 @@ programa
 			escreva("Opção Inválida!!\n\n")
 			escreva("Programa Finalizado!!\n")
 			}
+
+			
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -66,7 +82,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 498; 
+ * @POSICAO-CURSOR = 677; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
