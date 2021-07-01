@@ -3,7 +3,7 @@ programa
 	
 	funcao inicio()
 	{	//Declaração de Variavel
-		cadeia menu[6]={"Poupanca","Corrente","Especial","Empresa","Estudantil","Sair"}
+		cadeia menu[6]={"Poupanca1","Corrente2","Especial","Empresa","Estudantil","Sair"}
 		inteiro opcao = 0
 
 		//Devolução de boas vindas
@@ -66,7 +66,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 498; 
+ * @POSICAO-CURSOR = 98; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
