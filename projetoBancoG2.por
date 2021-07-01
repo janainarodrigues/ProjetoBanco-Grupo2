@@ -36,9 +36,16 @@ programa
 			}
 		senao se(opcao == 2){
 			//codigo conta especial
-		escreva("-----------------------------\n")
-		escreva("   Tipo de conta: ",menu[opcao],"\n")
-		escreva("-----------------------------\n")
+		real saldo = 0.00, limite = 1000.00
+		inteiro saldoDebito = 0, saldoCredito = 0, escolher = 0
+			escreva("-----------------------------\n")
+			escreva("   Tipo de conta: ",menu[opcao],"\n")
+			escreva("-----------------------------\n")
+			escreva("\n\n","Saldo atual da conta: R$", saldo, "  -  Limite disponível: R$", limite)	
+			escreva("MOVIMENTO - (1)DÉBITO -- (2)CRÉDITO\n")
+				se(escolher == 1)
+				escreva("A opção escolhida foi: DÉBITO")
+		
 			}
 		senao se(opcao == 3){
 			//codigo conta empresa
@@ -66,7 +73,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 498; 
+ * @POSICAO-CURSOR = 1455; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
