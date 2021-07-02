@@ -63,7 +63,7 @@ programa
 		limpa() // limpa console
 
 		//opções 2° menu
-		para(inteiro y = 0; y > 11; y++){
+		//para(inteiro y = 0; y > 11; y++){
 		se(opcao == 0){     //Debito
 
 			escreva("-----------------------------\n")
@@ -134,7 +134,7 @@ programa
 			escreva("ou\n")
 			escreva("Saldo não pode ficar negativo!!")
 				}		
-			}
+			//}
 		}
 		senao se(opcao == 4){
 			//codigo conta estudantil
@@ -156,7 +156,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1924; 
+ * @POSICAO-CURSOR = 3797; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
