@@ -1,11 +1,12 @@
-programa
+programa //APAGUE-ME
 {
 	
 	funcao inicio()
 	{	//Declaração de Variavel
 		cadeia menu[6]={"Poupanca","Corrente","Especial","Empresa","Estudantil","Sair"}
 		inteiro opcao = 0
-		
+		//
+		//
 
 		//Devolução de boas vindas
 		escreva("-----------------------------\n")
@@ -82,7 +83,7 @@ programa
 					valorAnterior= saldo + valorDebito
 					}
 				senao se(escolher == 2){
-					escreva("Programa Finalizado!!")
+					escreva("Saiu...!!")
 					pare
 					}
 				se(valorAnterior == valorDebito){
@@ -91,12 +92,7 @@ programa
 					escreva("Seu atual saldo é: " + saldo +"\n")
 					escreva("Seu atual saldo do fundo estudantil é: " + limite +"\n")
 					movimento++
-					}
-				senao{
-					escreva("Programa Finalizado!!")
-												
-					}
-										
+					}					
 					}
 				se (movimento >= 3){
 					escreva("Limite de movimentos diário atingido! \nVolte amanhã para mais dez movimentos")
@@ -140,7 +136,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 29; 
+ * @POSICAO-CURSOR = 20; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
