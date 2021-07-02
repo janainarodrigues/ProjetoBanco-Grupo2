@@ -7,7 +7,7 @@ programa
 		cadeia menu2[5]={"Debito","Credito","Emprestimo","Saldo","Sair"}
 		inteiro opcao = 0
 		real movimentos = 0.00, saldo=0.00, debito = 0.00, credito = 0.00, emprestimo
-		real emprestimoF = 10000.00
+		real emprestimoF = 10000.00, emprestimoS = 0.00
 		
 		//Devolução de boas vindas
 		escreva("-----------------------------\n")
@@ -29,7 +29,7 @@ programa
 		se(opcao == 0){
 			//codigo conta poupança
 		escreva("-----------------------------\n")
-		escreva("   Tipo de conta: ",menu[opcao],"\n")
+		escreva(" Tipo de conta: ",menu[opcao],"\n")
 		escreva("-----------------------------\n")
 			}
 		senao se(opcao == 1){
@@ -63,7 +63,7 @@ programa
 		limpa() // limpa console
 
 		//opções 2° menu
-		//para(inteiro y = 0; y > 11; y++){
+		para(inteiro y = 0; y > 11; y++){
 		se(opcao == 0){     //Debito
 
 			escreva("-----------------------------\n")
@@ -99,18 +99,23 @@ programa
 			}
 		senao se(opcao == 2){    //Emprestimo
 			escreva("-----------------------------\n")
-			escreva("   Tipo e operação: ",menu2[opcao],"\n")
+			escreva(" Tipo e operação: ",menu2[opcao],"\n")
 			escreva("-----------------------------\n")
 			
 			escreva("Escreva o valor de emprestimo: ")
 			leia(emprestimo)
-			
-			saldo += emprestimo
-			emprestimoF -= emprestimo
-			movimentos++
-
+				saldo += emprestimo
+				emprestimoF -= emprestimo
+				emprestimoS += emprestimo
+				movimentos++
+			se(emprestimoS > 10000.00){
+				
+				escreva("Valor insuficiente para emprestimo")
+				}
 			escreva("\nSeu saldo agora é de R$: ", saldo)
-			escreva("\n\nSeu saldo para emprestimo é de R$: ", emprestimoF)
+			escreva("\n\nSeu saldo para emprestimo é de R$: ", emprestimoF,"\n")
+			escreva("\nSeu valor de emprestimo já solicitado é de R$: ", emprestimoS,"\n")
+							
 			}
 		senao se(opcao == 3){    //Verificar Saldo
 			escreva("Seu saldo é de R$: ",saldo,"\n")  
@@ -129,7 +134,7 @@ programa
 			escreva("ou\n")
 			escreva("Saldo não pode ficar negativo!!")
 				}		
-			//}
+			}
 		}
 		senao se(opcao == 4){
 			//codigo conta estudantil
@@ -151,7 +156,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3925; 
+ * @POSICAO-CURSOR = 1924; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
