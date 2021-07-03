@@ -4,17 +4,18 @@ programa //apague//
 	funcao inicio()
 	{	//Declaração de Variavel
 		cadeia menu[6]={"Poupanca","Corrente","Especial","Empresa","Estudantil","Sair"}
-		cadeia menu2[5]={"Debito","Credito","Emprestimo","Saldo","Sair"}
-		inteiro opcao = 0
+		cadeia menu2[5]={"Debito","Credito","Emprestimo","Saldo","Voltar"}
+		inteiro opcao = 0, movimento = 0
 		inteiro opcao2 = 0
 		real movimentos = 0.00, saldo=0.00, debito = 0.00, credito = 0.00, emprestimo
 		real emprestimoF = 10000.00, emprestimoS = 0.00
 		
 		//Devolução de boas vindas
 		escreva("-----------------------------\n")
-		escreva("   Bem vindo ao Banco Midas!\n")
+		escreva("   Bem vindo ao Banco BNGM!\n")
 		escreva("-----------------------------\n")
-		
+
+		para(inteiro z = 0; z < 100; z++){
 		//Escopo do menu
 		escreva("\n----Menu----\n") 
 		para(inteiro x=0; x < 6; x++){
@@ -46,7 +47,7 @@ programa //apague//
 		escreva("-----------------------------\n")
 		
 		//Escopo do menu
-		para(inteiro y = 0; y < 9; y++){
+		para(inteiro y = 0; y <= 20; y++){
 		
 		escreva("\n----Menu----\n") 
 		para(inteiro x=0; x < 5; x++){
@@ -135,30 +136,42 @@ programa //apague//
 		}
 		senao se(opcao2 == 3){    //Verificar Saldo
 			escreva("Seu saldo é de R$: ",saldo,"\n")  
+			movimentos++
 			}
 		senao se(opcao2 == 4){
-			escreva("Programa Finalizado!!")
+			escreva("-----------------------------\n")
+			escreva("   Bem vindo ao Banco BNGM!\n")
+			escreva("-----------------------------\n")
+			pare
 			}
-		senao{
+		senao se(opcao2 > 4){
 			escreva("Opção Inválida!!\n\n")
-			escreva("Programa Finalizado!!\n")
+			escreva("Digite uma opção do menu!!\n")
+			
 			}
 		
 				
 			}
-			escreva("\nLimite de movimentações diarios!!\n")
+			//se(movimento >= 9)
+			//escreva("\nLimite de movimentações diarios!!\n")
+			//pare
 		}
 		/*senao se(opcao == 4){
 			//codigo conta estudantil
 	
 			}*/
 		senao se(opcao == 5){
-			escreva("Programa Finalizado!!")
+			escreva("Obrigado por usar o Banco BNGM!!\n\n")
+			pare
 			}
 		senao{
 			escreva("Opção Inválida!!\n\n")
 			escreva("Programa Finalizado!!\n")
+			pare
 			}
+
+			
+		}
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -166,7 +179,7 @@ programa //apague//
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1375; 
+ * @POSICAO-CURSOR = 4523; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
