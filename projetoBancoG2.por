@@ -6,6 +6,7 @@ programa //apague//
 		cadeia menu[6]={"Poupanca","Corrente","Especial","Empresa","Estudantil","Sair"}
 		cadeia menu2[5]={"Debito","Credito","Emprestimo","Saldo","Sair"}
 		inteiro opcao = 0
+		inteiro opcao2 = 0
 		real movimentos = 0.00, saldo=0.00, debito = 0.00, credito = 0.00, emprestimo
 		real emprestimoF = 10000.00, emprestimoS = 0.00
 		
@@ -26,31 +27,27 @@ programa //apague//
 		leia(opcao)
 		limpa() // limpa console
 
-		se(opcao == 0){
+		/*se(opcao == 0){
 			//codigo conta poupança
-		escreva("-----------------------------\n")
-		escreva(" Tipo de conta: ",menu[opcao],"\n")
-		escreva("-----------------------------\n")
+		
 			}
 		senao se(opcao == 1){
 			//codigo conta corrente
-		escreva("-----------------------------\n")
-		escreva("   Tipo de conta: ",menu[opcao],"\n")
-		escreva("-----------------------------\n")
+		
 			}
 		senao se(opcao == 2){
 			//codigo conta especial
-		escreva("-----------------------------\n")
-		escreva("   Tipo de conta: ",menu[opcao],"\n")
-		escreva("-----------------------------\n")
-			}
-		senao se(opcao == 3){
+	
+			}*/
+		/*senao*/ se(opcao == 3){
 			//codigo conta empresa
 		escreva("-----------------------------\n")
 		escreva("   Tipo de conta: ",menu[opcao],"\n")
 		escreva("-----------------------------\n")
 		
 		//Escopo do menu
+		para(inteiro y = 0; y < 9; y++){
+		
 		escreva("\n----Menu----\n") 
 		para(inteiro x=0; x < 5; x++){
 			escreva(x," - ",menu2[x],"\n")	
@@ -59,21 +56,25 @@ programa //apague//
 		// Final do Menu
 		// Pedido de opção de menu
 		escreva("\nSelecione uma opção de 0 a 4: ")
-		leia(opcao)
+		leia(opcao2)
 		limpa() // limpa console
 
 		//opções 2° menu
-		//para(inteiro y = 0; y > 11; y++){
-		se(opcao == 0){     //Debito
+		
+		se(opcao2 == 0){     //Debito
 
 			escreva("-----------------------------\n")
-			escreva("   Tipo e operação: ",menu2[opcao],"\n")
+			escreva("   Tipo e operação: ",menu2[opcao2],"\n")
 			escreva("-----------------------------\n")
+			escreva("Seu saldo de conta é: R$ ",saldo,"\n")
+			escreva("\nSeu saldo para emprestimo é: R$ ",emprestimoF,"\n")
 			
 			escreva("Escreva o valor a ser debitado: ")
 			leia(debito)
-
-			se(saldo <= 0){
+			se(debito < 0){
+				escreva("\nDigite um valor positivo\n")
+				}
+			senao se(saldo <= 0){
 				escreva("\nSaldo insuficiente, faça um credito \n")
 				}
 			senao{
@@ -82,45 +83,60 @@ programa //apague//
 
 			escreva("\nSeu saldo agora é de R$: ", saldo)
 			}
-			
-			}
-		senao se(opcao == 1){  //Credito
+		}
+		senao se(opcao2 == 1){  //Credito
 			escreva("-----------------------------\n")
 			escreva("   Tipo e operação: ",menu2[opcao],"\n")
 			escreva("-----------------------------\n")
+			escreva("Seu saldo de conta é: R$ ",saldo,"\n")
+			escreva("\nSeu saldo para emprestimo é: R$ ",emprestimoF,"\n")
 			
 			escreva("Escreva o valor a ser creditado: ")
 			leia(credito)
-			
+			se(credito < 0){
+				escreva("\nDigite um valor positivo\n")
+			}
+			senao{
 			saldo += credito
 			movimentos++
 
 			escreva("\nSeu saldo agora é de R$: ", saldo)
+				}
+			
 			}
-		senao se(opcao == 2){    //Emprestimo
+		senao se(opcao2 == 2){    //Emprestimo
 			escreva("-----------------------------\n")
 			escreva(" Tipo e operação: ",menu2[opcao],"\n")
 			escreva("-----------------------------\n")
+			escreva("Seu saldo de conta é: R$ ",saldo,"\n")
+			escreva("\nSeu saldo para emprestimo é: R$ ",emprestimoF,"\n")
 			
 			escreva("Escreva o valor de emprestimo: ")
 			leia(emprestimo)
+			se(emprestimo < 0){
+				escreva("\nDigite um valor positivo\n")
+				}
+			senao se(emprestimo <= 10000.00){
 				saldo += emprestimo
 				emprestimoF -= emprestimo
 				emprestimoS += emprestimo
 				movimentos++
-			se(emprestimoS > 10000.00){
-				
-				escreva("Valor insuficiente para emprestimo")
-				}
+
 			escreva("\nSeu saldo agora é de R$: ", saldo)
 			escreva("\n\nSeu saldo para emprestimo é de R$: ", emprestimoF,"\n")
 			escreva("\nSeu valor de emprestimo já solicitado é de R$: ", emprestimoS,"\n")
-							
 			}
-		senao se(opcao == 3){    //Verificar Saldo
+			senao se(emprestimoS > 10000.00){
+				escreva("Valor insuficiente para emprestimo")
+				}senao se(emprestimoS >= 10000.01)	{
+					escreva("Valor insuficiente para emprestimo")		
+			}
+			
+		}
+		senao se(opcao2 == 3){    //Verificar Saldo
 			escreva("Seu saldo é de R$: ",saldo,"\n")  
 			}
-		senao se(opcao == 4){
+		senao se(opcao2 == 4){
 			escreva("Programa Finalizado!!")
 			}
 		senao{
@@ -128,20 +144,14 @@ programa //apague//
 			escreva("Programa Finalizado!!\n")
 			}
 		
-		//parada para movimenta
-		se(movimentos > 10){
-			escreva("Limite de movimentações diarios!!\n")
-			escreva("ou\n")
-			escreva("Saldo não pode ficar negativo!!")
-				}		
-			//}
-		}
-		senao se(opcao == 4){
-			//codigo conta estudantil
-		escreva("-----------------------------\n")
-		escreva("   Tipo de conta: ",menu[opcao],"\n")
-		escreva("-----------------------------\n")
+				
 			}
+			escreva("\nLimite de movimentações diarios!!\n")
+		}
+		/*senao se(opcao == 4){
+			//codigo conta estudantil
+	
+			}*/
 		senao se(opcao == 5){
 			escreva("Programa Finalizado!!")
 			}
@@ -156,7 +166,7 @@ programa //apague//
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 19; 
+ * @POSICAO-CURSOR = 1375; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
