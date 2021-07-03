@@ -75,10 +75,10 @@ programa //apague//
 			se(debito < 0){
 				escreva("\nDigite um valor positivo\n")
 				}
-			senao se(saldo <= 0){
+			senao se(saldo - debito < 0){
 				escreva("\nSaldo insuficiente, faça um credito \n")
 				}
-			senao{
+			senao se(movimentos < 10){
 			saldo -= debito
 			movimentos++
 
@@ -97,7 +97,7 @@ programa //apague//
 			se(credito < 0){
 				escreva("\nDigite um valor positivo\n")
 			}
-			senao{
+			senao se(movimentos < 10){
 			saldo += credito
 			movimentos++
 
@@ -127,14 +127,18 @@ programa //apague//
 			escreva("\n\nSeu saldo para emprestimo é de R$: ", emprestimoF,"\n")
 			escreva("\nSeu valor de emprestimo já solicitado é de R$: ", emprestimoS,"\n")
 			}
-			senao se(emprestimoS > 10000.00){
+			senao se(emprestimo > 10000.00 e emprestimoS > 10000.00){
 				escreva("Valor insuficiente para emprestimo")
-				}senao se(emprestimoS >= 10000.01)	{
+				}senao se(emprestimo >= 10000.01 e emprestimoS >= 10000.01)	{
 					escreva("Valor insuficiente para emprestimo")		
 			}
 			
 		}
 		senao se(opcao2 == 3){    //Verificar Saldo
+			escreva("-----------------------------\n")
+			escreva(" Tipo e operação: ",menu2[opcao],"\n")
+			escreva("-----------------------------\n")
+			
 			escreva("Seu saldo é de R$: ",saldo,"\n")  
 			movimentos++
 			}
@@ -149,13 +153,15 @@ programa //apague//
 			escreva("Digite uma opção do menu!!\n")
 			
 			}
-		
 				
+			se(movimentos > 9){
+			escreva("\n\nLimite de movimentações diarios!!\n")
+			escreva("\nVoltando ao menu principal!!\n")
+			pare
 			}
-			//se(movimento >= 9)
-			//escreva("\nLimite de movimentações diarios!!\n")
-			//pare
 		}
+			
+	}
 		/*senao se(opcao == 4){
 			//codigo conta estudantil
 	
@@ -168,9 +174,8 @@ programa //apague//
 			escreva("Opção Inválida!!\n\n")
 			escreva("Programa Finalizado!!\n")
 			pare
-			}
-
-			
+			}	
+			saldo = 0		
 		}
 	}
 }
@@ -179,7 +184,7 @@ programa //apague//
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 4523; 
+ * @POSICAO-CURSOR = 4819; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
