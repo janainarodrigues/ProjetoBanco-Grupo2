@@ -53,17 +53,17 @@ programa //APAGUE-ME
 			}
 		senao se(opcao == 4){ //se precionar 4 cai na ContaEstudantil
 			//Declarei minhas variáveis 
-			real limite = 5000.00, saldo = 0.0, valorDebito, valorAnterior = 0.0 , valorCredito
-			inteiro escolher, escolher2, movimento = 0
+			real limite = 4000.00, saldo = 0.0, valorDebito, valorAnterior = 0.0 , valorCredito = 0.0, excesso = 0.0
+			inteiro escolher, escolher2,escolher3, movimento = 0
 				//interface gráfica	
 			escreva("-----------------------------\n")
 			escreva("   Tipo de conta: ", menu[opcao],"\n")
 			escreva("-----------------------------\n")
 				//para serve pra montar um loop com 10 movimentos bancários
-			para(inteiro vezes = 0; vezes<2; vezes++){  
+			para(inteiro vezes = 0; vezes<10; vezes++){  
 				escreva("Seu saldo é: " + saldo + "\n")
 				escreva("Seu saldo estudantil é: " + limite + "\n")
-				escreva("1 - Debito \n2 - Credito \n")
+				escreva("1 - Debito \n2 - Credito \n3 - sair \n")
 				leia(escolher2)
 				se (escolher2 == 1){
 						
@@ -74,7 +74,7 @@ programa //APAGUE-ME
 					escreva("Retiraremos " + valorDebito + " do seu fundo estudantil \nPressione 1 para confirmar e 2 para sair \n ")
 					leia(escolher)
 					
-				se(escolher == 1){
+				 se(escolher == 1){
 					saldo += valorDebito
 					limite -= valorDebito
 					escreva("Seu atual saldo é: " + saldo +"\n")
@@ -94,7 +94,7 @@ programa //APAGUE-ME
 					movimento++
 					}					
 					}
-				se (movimento >= 3){
+				se (movimento >= 10){
 					escreva("Limite de movimentos diário atingido! \nVolte amanhã para mais dez movimentos")
 					
 					}
@@ -103,9 +103,38 @@ programa //APAGUE-ME
 					pare
 					}
 					}
-				senao{
-					escreva("1")
+			// ----------------------------------Credito------------------------------------
+				se(escolher2 == 2){
+					escreva("Digite o quanto você deseja creditar no seu saldo: \n")
+					leia(valorCredito)
+					se(valorCredito > 0){
+						escreva("Adicionaremos: " + valorCredito + " para o seu saldo. \n")
+						escreva("Digite: \n1 - confirmar ou 2 - Sair  \n")
+						leia(escolher3)
+						se(escolher3 == 2){
+							escreva("Saindo...")
+							pare
+						}
+						senao se(escolher3 == 1){
+							saldo += valorCredito							
+						}
+			
+						
+						senao{
+							escreva("Número inválido!")
+						}
 					}
+				}
+				//-------------------------SAIR---------------------------
+						se(escolher2 == 3){
+							escreva("Saindo...")
+							pare
+						}
+						senao{
+							escreva("Número inválido!")
+							pare
+						}
+						
 												
 			
 					}//aqui termina o para
@@ -136,7 +165,7 @@ programa //APAGUE-ME
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 20; 
+ * @POSICAO-CURSOR = 4392; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
