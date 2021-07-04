@@ -12,6 +12,7 @@ programa
 		escreva("-----------------------------\n")
 		
 		//Escopo do menu
+		para(inteiro y=0; y < 100; y++){
 		escreva("\n----Menu----\n") 
 		para(inteiro x=0; x < 6; x++){
 			escreva(x," - ",menu[x],"\n")	
@@ -36,53 +37,86 @@ programa
 			}
 		senao se(opcao == 2){
 			real saldo = 0.00, limite = 1000.00, movimento = 0.00 
-			real movimentoDebito = 0.00, movimentoCredito = 0.00
-			real usarLimite = 0.00,valorDebito = 0.00,valorCredito = 0.00 
-			inteiro escolher1 = 0
-			caracter escolher
-			
+			real variavelExtra = 0.00, limiteEspecial = 0.00, usarLimite = 0.00
+			inteiro escolher1 = 0, limiteMovimentos = 0
+			caracter escolher = ' '
+			para(inteiro x = 0; x<10; x++){
 			escreva("-----------------------------\n")
 			escreva("   Tipo de conta: ",menu[opcao],"\n")
-			escreva("-----------------------------\n")
-			escreva("\n\n","Saldo atual da conta: R$", saldo, "  -  Limite disponível: R$", limite)	
+			escreva("-----------------------------")
+			escreva("\nNº da Conta: 000211-0\n")
+			escreva("Saldo atual da conta: R$", saldo, "  -  Limite disponível: R$", limite)	
 			escreva("\n---------MOVIMENTO-----------\n")
 			escreva("1 - DÉBITO: \n")
 			escreva("2 - CRÉDITO: \n")
+			escreva("3 - VOLTAR: \n")
 			leia(escolher1)
-
-			para(inteiro x=0;x<3;x++){
+			limpa()
+			se(escolher1 == 3){
+			pare
+			}
+			para(inteiro w=0;w<20;w++){
 				se(escolher1 == 1){
 						escreva("---------------DÉBITO----------------\n")
 						escreva("Escreva a quantia que deseja utilizar: R$")
 						leia(movimento)
 						escreva("Você deseja continuar? S/N:")
 						leia(escolher)
+						limpa()
 						se(escolher == 'S'ou escolher == 's'){
-							//valorDebito = saldo + movimento
-							movimentoDebito = limite - movimento
-							//saldo += movimento
-							limite -= movimento
-							limpa()
-							escreva("Você retirou ",movimento," do seu limite.\n")
-							escreva("\n","Saldo atual da conta: R$", saldo, "  -  Limite disponível: R$", movimentoDebito)
-							escreva("\n")
-							se(movimentoDebito<0){
-								escreva("LIMITE INSUFICIENTE")
+							se(limiteMovimentos<10){
+								se(movimento<0){
+									escreva("\nNÚMERO INVÁLIDO\n")
+									pare
+								}
+								se(saldo == 0){
+									usarLimite = limite - movimento
+									limite -= movimento 
+									escreva("Você retirou ",movimento," do seu limite.\n")
+									escreva("\n","Saldo atual da conta: R$", saldo, "  -  Limite disponível: R$", usarLimite,"\n")
+									limiteMovimentos++
+						}
+								senao se(saldo>0 e saldo>movimento){
+									saldo = saldo - movimento 
+									escreva("Você retirou ",movimento," do seu saldo.\n")
+									escreva("\n","Saldo atual da conta: R$", saldo, "  -  Limite disponível: R$", limite,"\n")
+									limiteMovimentos++
+									
+						}
+								senao se(saldo>0 e saldo<movimento){
+									variavelExtra = movimento - saldo
+									limiteEspecial -= variavelExtra
+									limite = limite + limiteEspecial
+									saldo = 0.00
+									escreva("Retiramos ",movimento," do seu saldo e o restante do seu limite.\n")
+									escreva("\n","Saldo atual da conta: R$", saldo, "  -  Limite disponível: R$",limite,"\n")
+									limiteMovimentos++
+						}
+								senao se(movimento>saldo e movimento>limite){
+									escreva("NÃO HÁ SALDO E LIMITE SUFICIENTE")
+						}
+								se(limite<0){
+								escreva("NÃO HÁ LIMITE SUFICIENTE\n")
 								pare
-								
-							}
+								}
+								//senao se(saldo>0 e limite<1000)
 					}
-						se(escolher == 'N' ou escolher == 'n'){
-							escreva("-----------------------------\n")
-							escreva("   Tipo de conta: ",menu[opcao],"\n")
-							escreva("-----------------------------\n")
-							escreva("\n\n","Saldo atual da conta: R$", saldo, "  -  Limite disponível: R$", limite)	
-							escreva("\nMOVIMENTO - 1 DÉBITO -- 2 CRÉDITO\n")
-							leia(escolher1)
-							
-					}
-						
+				}
+				se(escolher == 'N' ou escolher == 'n'){
+							escreva("VOLTANDO PARA O MENU\n")
+							pare
+				}				
 			}
+			
+		
+				se(limiteMovimentos >=10){
+				limpa()
+				escreva("\n")
+				escreva("\nLIMITE DE MOVIMENTOS\n")
+				escreva("VOLTE AMANHA")
+				escreva("\n")
+				pare
+				}
 				se(escolher1 == 2){
 					escreva("---------------CRÉDITO----------------\n")
 					escreva("Escreva a quantia que deseja creditar: R$")
@@ -90,16 +124,38 @@ programa
 					escreva("Você deseja continuar? S/N:")
 					leia(escolher)
 					limpa()
-					se(escolher == 'S' ou escolher == 's'){
-					saldo = saldo + movimento
-					escreva("\n","Saldo atual da conta: R$", saldo,"\n")
+							
+							se(movimento<0){
+								escreva("NÚMERO INVÁLIDO\n")
+								pare
 				}
-					senao se(escolher == 'N' ou escolher == 'n'){
-									escreva("OPÇÃO INVÁLIDA\n")
-				}					escreva("VOLTANDO PARA O MENU")
+							se(escolher == 'S' ou escolher == 's'){
+						//se(limiteMovimentos>10){
+								saldo = saldo + movimento
+								limiteMovimentos++
+								escreva("\n","Saldo atual da conta: R$", saldo,"\n")
+								
+				}
+							se(escolher == 'N' ou escolher == 'n'){
+								escreva("OPÇÃO INVÁLIDA\n")
+								escreva("VOLTANDO PARA O MENU\n")
+								limpa()
+								pare
+					}			
+				se(limiteMovimentos >10){
+				limpa()
+				escreva("\n")
+				escreva("\nLIMITE DE MOVIMENTOS\n")
+				escreva("VOLTE AMANHÃ")
+				escreva("\n")
+				pare
+			
+					}			
+				}		
 			}
 		}
-	}	
+	}
+
 		senao se(opcao == 3){
 			//codigo conta empresa
 		escreva("-----------------------------\n")
@@ -121,13 +177,14 @@ programa
 			}
 		}
 	}
+}
 
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2028; 
+ * @POSICAO-CURSOR = 1683; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
