@@ -199,10 +199,14 @@ programa
 			escreva("-----------------------------\n")
 			escreva(" Tipo e operação: ",menu2[opcao2],"\n")
 			escreva("-----------------------------\n")
-			
+			se(movimentos > 10){
+				escreva("\n\nLimite de movimentações diarios!!\n")
+				}
+			senao{
 			escreva("\nSeu saldo é de R$: ",saldo,"\n")  
 			movimentos++
 			}
+		}
 		senao se(opcao2 == 4){
 		escreva("-----------------------------------------\n")
 		escreva(" Bem vindo ao Banco BNGM! -- Grupo 02 -- \n")
@@ -247,7 +251,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 5575; 
+ * @POSICAO-CURSOR = 5492; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
