@@ -36,6 +36,7 @@ programa //apague//
 		escreva("-----------------------------\n")
 		escreva("   Tipo de conta: ",menu[opcao],"\n")
 		escreva("-----------------------------\n")
+		escreva("Número : 844536-3\n")
 		
 		escreva("Saldo em conta de : R$",saldoInicial,"\n")
           escreva("Digite um valor para creditar: ")
@@ -51,7 +52,7 @@ programa //apague//
               limpa()
             
                 se(opcao==1){
-          escreva("digite valor para credita em sua conta:\n")
+          escreva("Digite valor para credita em sua conta:\n")
              leia(credito)
                saldoInicial+=credito
               
@@ -75,10 +76,10 @@ programa //apague//
                 senao se (opcao==3){
                     para(inteiro X=0; X<3; X++){
                	  		
-          escreva("\ndeseja pedir cheque? S=1 ou N=2\n")
+          escreva("\nDeseja pedir cheque? S=1 ou N=2\n")
              leia (opcao2)
                 se(taLao>1){
-                	escreva("limite de talao alcancado")
+                	escreva("Limite de talao alcancado")
                 	pare
                 }
              
@@ -127,14 +128,12 @@ programa //apague//
 	}    
    }
 }
-
-
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1492; 
+ * @POSICAO-CURSOR = 2499; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
