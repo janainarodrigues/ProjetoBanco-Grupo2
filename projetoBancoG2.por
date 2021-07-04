@@ -13,7 +13,8 @@ programa
 		
 		//Devolução de boas vindas
 		escreva("-----------------------------------------\n")
-		escreva(" Bem vindo ao Banco BNGM! -- Grupo 02 -- \n")
+		escreva(" Bem vindo ao Banco BNGM! -- Grupo 02 -- ")
+		escreva("  \n   Onde o seu dinheiro vale ouro! \n")
 		escreva("-----------------------------------------\n")
 
 		para(inteiro z = 0; z < 100; z++){
@@ -210,6 +211,7 @@ programa
 		senao se(opcao2 == 4){
 		escreva("-----------------------------------------\n")
 		escreva(" Bem vindo ao Banco BNGM! -- Grupo 02 -- \n")
+		escreva("   Onde o seu dinheiro vale ouro! \n")
 		escreva("-----------------------------------------\n")
 			pare
 			}
@@ -251,7 +253,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 5492; 
+ * @POSICAO-CURSOR = 6454; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
