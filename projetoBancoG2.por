@@ -135,6 +135,7 @@ programa //apague//
                         			 } // fecha escolher3 == 2
                         			  senao se(escolher3 == 1){
                         			  	 saldo += valorCredito 
+                        			  	 movimentos++
                             			 pare   
                         			  }//fecha escolher3 == 1
                         			  senao{
@@ -170,7 +171,7 @@ programa //apague//
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 5008; 
+ * @POSICAO-CURSOR = 4446; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
