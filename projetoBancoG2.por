@@ -1,6 +1,5 @@
 programa //apague//
-{  //apague2
-	//apague3
+{
 	inclua biblioteca Util
 	funcao inicio()
 	{	//Declaração de Variavel
@@ -55,8 +54,8 @@ programa //apague//
 
 			para(inteiro vezes = 0; vezes<10; vezes++){ 
 				escreva("Seu saldo é: " + saldo + "\n")
-				escreva("Seu saldo estudantil é: " + limite + "\n")
-				escreva("1 - Debito \n2 - Credito \n3 - Sair\n" + movimento + "\n")
+				escreva("Seu limite é: " + limite + "\n")
+				escreva("1 - Debito \n2 - Credito \n3 - Sair\n" + movimentos + "\n")
 				leia(escolher2) // escolher 2 = primeira escolha
 			se(escolher2 == 3){
 					limpa()
@@ -67,15 +66,20 @@ programa //apague//
 					//------------------------------DEBITO----------------------------
 					se (escolher2 == 1){
 					limpa()	
-					escreva("Digite o quanto você deseja retirar do fundo estudantil: \n")
+					escreva("Digite o quanto você deseja retirar do limite: \n")
 					leia(valorDebito)
-					se(valorDebito < 5001.00){
+					se(valorDebito>5000){
+						escreva("Valor invalido \n")
+						pare
+						
+					}
+					senao se(valorDebito < 5001.00){
 						escreva("Adicionaremos: " + valorDebito + " para o seu saldo. \n")
                         		escreva("Digite: \n1 - confirmar ou 2 - Sair  \n")
                         		leia(escolher4)
                         		
                         		se(escolher4 == 1){
-      
+      						//movimentos++
 						 se(valorDebito <= 5000.00){
 							
 							se(valorDebito + valorDebitoS  >= 5000.01){
@@ -98,7 +102,7 @@ programa //apague//
                         			escreva("Saindo...")
                         			movimento++
                         		}
-                        		se(movimento >= 9 e valorDebito < limite){
+                        		se(movimento >= 8 e valorDebito < limite){
 						escreva("\n")
 						}
 						senao{
@@ -106,7 +110,7 @@ programa //apague//
 						}
                         		
 						
-					se (movimento == 10){
+					se (movimento == 9){
 						escreva("Limite de movimentos diário atingido! \nVolte amanhã para mais dez movimentos")					
 					}//fecha movimentos == 10
 					senao se(limite <= 0){
@@ -161,15 +165,12 @@ programa //apague//
 		}
 	}
 }
-
-
-
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 43; 
+ * @POSICAO-CURSOR = 5008; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
