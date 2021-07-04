@@ -1,6 +1,6 @@
 programa //APAGUE-ME
 {
-	
+	//apagaAi
 	funcao inicio()
 	{	//Declaração de Variavel
 		cadeia menu[6]={"Poupanca","Corrente","Especial","Empresa","Estudantil","Sair"}
