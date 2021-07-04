@@ -1,18 +1,19 @@
 programa //apague//
 {
+
 	
 	funcao inicio()
 	{	cadeia menu[6]={"Poupanca","Corrente","Especial","Empresa","Estudantil","Sair"}
 		
-		inteiro opcao = 0,opcao2
+		inteiro opcao = 0,opcao2,movimentos=0
 		cadeia saque,deposito,simOunao
 		real saldoInicial=0.0,cheque=30.0 ,saldoFinal=0.0, debito=0.0, credito=0.0,taLao=0,saldo
 		
 		
 		//Devolução de boas vindas
-		escreva("-----------------------------\n")
-		escreva("   Bem vindo ao Banco BNGM!\n")
-		escreva("-----------------------------\n")
+		escreva("----------------------------------------\n")
+		escreva("   Bem vindo ao Banco BNGM! Grupo: 2\n")
+		escreva("----------------------------------------\n")
 
 		para(inteiro z = 0; z < 100; z++){
 		//Escopo do menu
@@ -42,10 +43,11 @@ programa //apague//
           escreva("Digite um valor para creditar: ")
              leia(credito)
                saldoInicial+=credito
+               movimentos++
           escreva ("Seu saldo é de :"+saldoInicial)
      
                 se(credito>0){
-                    para(inteiro x=0; x < 9; x++){
+                    para(inteiro x=0; x < 20; x++){
           escreva("\nDigite um valor para continuar:\n")
           escreva("1=credito\n2=debito\n3=cheque\n4=sair\n")
              leia(opcao)
@@ -54,9 +56,15 @@ programa //apague//
                 se(opcao==1){
           escreva("Digite valor para credita em sua conta:\n")
              leia(credito)
+                 se(movimentos < 10){
+			
+			
                saldoInicial+=credito
-              
+               movimentos++ 
+               
           escreva("Seu saldo é: ",saldoInicial)
+                  
+                   }
                 }
                 
                  senao se(opcao==2){
@@ -64,11 +72,12 @@ programa //apague//
              leia(debito)
                se(saldoInicial-debito <= 0){
                	
-               	escreva("Valor negativo, deposite uma credito!!")
+               	escreva("Saldo insuficiente, verifique seu saldo e tente novamente!!\n!!")
                	
                	               	}
-               	 senao{
+               	 senao se (movimentos<10){
                	 	 saldoInicial-=debito
+               	 	 movimentos++
                	 	   }
                
           escreva("Seu saldo é: ",saldoInicial)
@@ -87,6 +96,7 @@ programa //apague//
                     
            	   	saldoInicial=saldoInicial-30
            	   	 taLao++
+           	   	 movimentos++
           escreva("Seu cheque de "+cheque+ " foi creditado")
                
                 
@@ -121,10 +131,18 @@ programa //apague//
 			escreva("Opção Inválida!!\n\n")
 			escreva("Programa Finalizado!!\n")
 			pare
-			}	
+			
+			}
+			se(movimentos>9){
+
+				escreva("limite de movimentos alcançado,voltando para munu inicial")
+				
+				
+				}	
 					
 		}
-		saldo = 0
+		saldoInicial = 0
+		movimentos=0
 	}    
    }
 }
@@ -133,7 +151,7 @@ programa //apague//
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2499; 
+ * @POSICAO-CURSOR = 3881; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
