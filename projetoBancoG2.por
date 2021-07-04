@@ -12,7 +12,7 @@ programa //apague//
 		
 		//Devolução de boas vindas
 		escreva("----------------------------------------\n")
-		escreva("   Bem vindo ao Banco BNGM! Grupo: 2\n")
+		escreva("   Bem vindo ao Banco BNGM! Grupo: 2\n")	
 		escreva("----------------------------------------\n")
 
 		para(inteiro z = 0; z < 100; z++){
@@ -78,7 +78,13 @@ programa //apague//
                	 senao se (movimentos<10){
                	 	 saldoInicial-=debito
                	 	 movimentos++
-               	 	   }
+               	 	   } 
+               	 	    senao{
+               	 	    	
+               	 	    	escreva("Limite exedidos")
+               	 	    	pare
+               	 	    	
+               	 	    	}
                
           escreva("Seu saldo é: ",saldoInicial)
                 }
@@ -135,7 +141,7 @@ programa //apague//
 			}
 			se(movimentos>9){
 
-				escreva("limite de movimentos alcançado,voltando para munu inicial")
+				escreva("limite de movimentos alcançado,voltando para menu inicial")
 				
 				
 				}	
@@ -151,7 +157,7 @@ programa //apague//
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3881; 
+ * @POSICAO-CURSOR = 4009; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
