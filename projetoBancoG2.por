@@ -1,12 +1,13 @@
 programa //apague//
 {
+	inclua biblioteca Util
 	
 	funcao inicio()
 	{	//Declaração de Variavel
 		cadeia menu[6]={"Poupanca","Corrente","Especial","Empresa","Estudantil","Sair"}
 		cadeia menu2[5]={"Debito","Credito","Emprestimo","Saldo","Voltar"}
 		inteiro opcao = 0, movimento = 0
-		inteiro opcao2 = 0
+		inteiro opcao2 = 0, conta
 		real movimentos = 0.00, saldo=0.00, debito = 0.00, credito = 0.00, emprestimo
 		real emprestimoF = 10000.00, emprestimoS = 0.00
 		
@@ -45,6 +46,8 @@ programa //apague//
 		escreva("-----------------------------\n")
 		escreva("   Tipo de conta: ",menu[opcao],"\n")
 		escreva("-----------------------------\n")
+		conta = Util.sorteia(000000,999999)
+		escreva("\nNúmero: ",conta,"-3\n")
 		
 		//Escopo do menu
 		para(inteiro y = 0; y <= 20; y++){
@@ -61,15 +64,22 @@ programa //apague//
 		limpa() // limpa console
 
 		//opções 2° menu
-		
-		se(opcao2 == 0){     //Debito
+	
+			se(opcao2 == 0){     //Debito
 
 			escreva("-----------------------------\n")
 			escreva("   Tipo e operação: ",menu2[opcao2],"\n")
 			escreva("-----------------------------\n")
-			escreva("Seu saldo de conta é: R$ ",saldo,"\n")
-			escreva("\nSeu saldo para emprestimo é: R$ ",emprestimoF,"\n")
-			
+			escreva("\nSeu saldo de conta é: R$ ",saldo,"\n")
+			escreva("\nSeu saldo para emprestimo é: R$ ",emprestimoF,"\n\n")
+
+			escreva("PARA CANCELAR A OPERAÇÃO DIGITE: 0\n")
+			escreva("PARA CONTINUAR A OPERAÇÃO DIGITE: 1 OU QUALQUER NUMERO\n")
+			leia(debito)
+			se(debito == 0){
+				escreva("\nCancelado\n")
+				}
+			senao{	
 			escreva("Escreva o valor a ser debitado: ")
 			leia(debito)
 			se(debito < 0){
@@ -82,16 +92,24 @@ programa //apague//
 			saldo -= debito
 			movimentos++
 
-			escreva("\nSeu saldo agora é de R$: ", saldo)
+			escreva("\nSeu saldo agora é de R$: ", saldo,"\n")
 			}
 		}
+	}
 		senao se(opcao2 == 1){  //Credito
 			escreva("-----------------------------\n")
-			escreva("   Tipo e operação: ",menu2[opcao],"\n")
+			escreva("   Tipo e operação: ",menu2[opcao2],"\n")
 			escreva("-----------------------------\n")
-			escreva("Seu saldo de conta é: R$ ",saldo,"\n")
-			escreva("\nSeu saldo para emprestimo é: R$ ",emprestimoF,"\n")
+			escreva("\nSeu saldo de conta é: R$ ",saldo,"\n")
+			escreva("\nSeu saldo para emprestimo é: R$ ",emprestimoF,"\n\n")
 			
+			escreva("PARA CANCELAR A OPERAÇÃO DIGITE: 0\n")
+			escreva("PARA CONTINUAR A OPERAÇÃO DIGITE: 1 OU QUALQUER NUMERO\n")
+			leia(credito)
+			se(credito == 0){
+				escreva("\nCancelado\n")
+				}
+			senao{	
 			escreva("Escreva o valor a ser creditado: ")
 			leia(credito)
 			se(credito < 0){
@@ -101,45 +119,61 @@ programa //apague//
 			saldo += credito
 			movimentos++
 
-			escreva("\nSeu saldo agora é de R$: ", saldo)
+			escreva("\nSeu saldo agora é de R$: ", saldo,"\n")
 				}
-			
 			}
+		}
 		senao se(opcao2 == 2){    //Emprestimo
 			escreva("-----------------------------\n")
-			escreva(" Tipo e operação: ",menu2[opcao],"\n")
+			escreva(" Tipo e operação: ",menu2[opcao2],"\n")
 			escreva("-----------------------------\n")
-			escreva("Seu saldo de conta é: R$ ",saldo,"\n")
-			escreva("\nSeu saldo para emprestimo é: R$ ",emprestimoF,"\n")
-			
+			escreva("\nSeu saldo de conta é: R$ ",saldo,"\n")
+			escreva("\nSeu saldo para emprestimo é: R$ ",emprestimoF,"\n\n")
+
+			escreva("PARA CANCELAR A OPERAÇÃO DIGITE: 0\n")
+			escreva("PARA CONTINUAR A OPERAÇÃO DIGITE: 1 OU QUALQUER NUMERO\n")
+			leia(emprestimo)
+			se(emprestimo == 0){
+				escreva("\nCancelado\n")
+				}
+			senao{	
 			escreva("Escreva o valor de emprestimo: ")
 			leia(emprestimo)
+			
 			se(emprestimo < 0){
 				escreva("\nDigite um valor positivo\n")
 				}
+			
 			senao se(emprestimo <= 10000.00){
+				
+				se(emprestimo + emprestimoS  >= 10000.01){
+				escreva("\n\nValor insuficiente para emprestimo!!!\n\n")
+				}
+				senao{
 				saldo += emprestimo
 				emprestimoF -= emprestimo
 				emprestimoS += emprestimo
 				movimentos++
 
-			escreva("\nSeu saldo agora é de R$: ", saldo)
-			escreva("\n\nSeu saldo para emprestimo é de R$: ", emprestimoF,"\n")
-			escreva("\nSeu valor de emprestimo já solicitado é de R$: ", emprestimoS,"\n")
+				escreva("\nSeu saldo agora é de R$: ", saldo)
+				escreva("\n\nSeu saldo para emprestimo é de R$: ", emprestimoF)
+				escreva("\nSeu valor de emprestimo já solicitado é de R$: ", emprestimoS,"\n")
+				}
+			
 			}
-			senao se(emprestimo > 10000.00 e emprestimoS > 10000.00){
-				escreva("Valor insuficiente para emprestimo")
-				}senao se(emprestimo >= 10000.01 e emprestimoS >= 10000.01)	{
-					escreva("Valor insuficiente para emprestimo")		
+			senao{
+				escreva("\n\nValor insuficiente para emprestimo!!!\n\n")
+				}
+				
 			}
 			
 		}
 		senao se(opcao2 == 3){    //Verificar Saldo
 			escreva("-----------------------------\n")
-			escreva(" Tipo e operação: ",menu2[opcao],"\n")
+			escreva(" Tipo e operação: ",menu2[opcao2],"\n")
 			escreva("-----------------------------\n")
 			
-			escreva("Seu saldo é de R$: ",saldo,"\n")  
+			escreva("\nSeu saldo é de R$: ",saldo,"\n")  
 			movimentos++
 			}
 		senao se(opcao2 == 4){
@@ -148,9 +182,9 @@ programa //apague//
 			escreva("-----------------------------\n")
 			pare
 			}
-		senao se(opcao2 > 4){
+		senao{
 			escreva("Opção Inválida!!\n\n")
-			escreva("Digite uma opção do menu!!\n")
+			escreva("Escolha outra opção do menu!!\n")
 			
 			}
 				
@@ -159,6 +193,7 @@ programa //apague//
 			escreva("\nVoltando ao menu principal!!\n")
 			pare
 			}
+		
 		}
 			
 	}
@@ -172,10 +207,11 @@ programa //apague//
 			}
 		senao{
 			escreva("Opção Inválida!!\n\n")
-			escreva("Programa Finalizado!!\n")
-			pare
+			escreva("Escolha outra opção do menu!!\n")
+			
 			}	
-			saldo = 0		
+			saldo = 0	
+			movimentos = 0	
 		}
 	}
 }
@@ -184,7 +220,7 @@ programa //apague//
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 4819; 
+ * @POSICAO-CURSOR = 3797; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
