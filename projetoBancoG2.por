@@ -5,7 +5,7 @@ programa //apague//
 	funcao inicio()
 	{	cadeia menu[6]={"Poupanca","Corrente","Especial","Empresa","Estudantil","Sair"}
 		
-		inteiro opcao = 0,opcao2,movimentos=0
+		inteiro opcao = 0,opcao1, opcao2,movimentos=0
 		cadeia saque,deposito,simOunao
 		real saldoInicial=0.0,cheque=30.0 ,saldoFinal=0.0, debito=0.0, credito=0.0,taLao=0,saldo
 		
@@ -50,10 +50,10 @@ programa //apague//
                     para(inteiro x=0; x < 20; x++){
           escreva("\nDigite um valor para continuar:\n")
           escreva("1=credito\n2=debito\n3=cheque\n4=sair\n")
-             leia(opcao)
+             leia(opcao1)
               limpa()
             
-                se(opcao==1){
+                se(opcao1==1){
           escreva("Digite valor para credita em sua conta:\n")
              leia(credito)
                  se(movimentos < 10){
@@ -67,7 +67,7 @@ programa //apague//
                    }
                 }
                 
-                 senao se(opcao==2){
+                 senao se(opcao1==2){
           escreva("Digite valor do debito:\n")
              leia(debito)
                se(saldoInicial-debito <= 0){
@@ -88,7 +88,7 @@ programa //apague//
                
           escreva("Seu saldo é: ",saldoInicial)
                 }
-                senao se (opcao==3){
+                senao se (opcao1==3){
                     para(inteiro X=0; X<3; X++){
                	  		
           escreva("\nDeseja pedir cheque? S=1 ou N=2\n")
@@ -115,7 +115,7 @@ programa //apague//
               } 
            	   }
            	   
-           	   senao se(opcao==4){
+           	   senao se(opcao1==4){
            	  escreva("saindo...")
            		 
            		 pare
