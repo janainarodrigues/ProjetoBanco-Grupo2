@@ -1,4 +1,4 @@
-programa //apague//
+programa 
 {
 	inclua biblioteca Util
 	
@@ -12,9 +12,9 @@ programa //apague//
 		real emprestimoF = 10000.00, emprestimoS = 0.00
 		
 		//Devolução de boas vindas
-		escreva("-----------------------------\n")
-		escreva("   Bem vindo ao Banco BNGM!\n")
-		escreva("-----------------------------\n")
+		escreva("-----------------------------------------\n")
+		escreva(" Bem vindo ao Banco BNGM! -- Grupo 02 -- \n")
+		escreva("-----------------------------------------\n")
 
 		para(inteiro z = 0; z < 100; z++){
 		//Escopo do menu
@@ -74,12 +74,19 @@ programa //apague//
 			escreva("\nSeu saldo para emprestimo é: R$ ",emprestimoF,"\n\n")
 
 			escreva("PARA CANCELAR A OPERAÇÃO DIGITE: 0\n")
-			escreva("PARA CONTINUAR A OPERAÇÃO DIGITE: 1 OU QUALQUER NUMERO\n")
+			escreva("PARA CONTINUAR A OPERAÇÃO DIGITE: 1\n")
 			leia(debito)
-			se(debito == 0){
-				escreva("\nCancelado\n")
+			se(debito > 1 ou debito < 0){
+				limpa()
+				escreva("\nNumero invalido!\n")
+				escreva("\nVoltando ao Menu!\n")
 				}
-			senao{	
+			senao se(debito == 0){
+				limpa()
+				escreva("\nCancelado!!!\n")
+				}
+			senao se(debito == 1){	
+			limpa()
 			escreva("Escreva o valor a ser debitado: ")
 			leia(debito)
 			se(debito < 0){
@@ -92,9 +99,12 @@ programa //apague//
 			saldo -= debito
 			movimentos++
 
-			escreva("\nSeu saldo agora é de R$: ", saldo,"\n")
+				escreva("\nSeu saldo agora é de R$: ", saldo,"\n")
+				escreva("\n\nSeu saldo para emprestimo é de R$: ", emprestimoF,"\n")
 			}
+			
 		}
+		
 	}
 		senao se(opcao2 == 1){  //Credito
 			escreva("-----------------------------\n")
@@ -104,12 +114,19 @@ programa //apague//
 			escreva("\nSeu saldo para emprestimo é: R$ ",emprestimoF,"\n\n")
 			
 			escreva("PARA CANCELAR A OPERAÇÃO DIGITE: 0\n")
-			escreva("PARA CONTINUAR A OPERAÇÃO DIGITE: 1 OU QUALQUER NUMERO\n")
+			escreva("PARA CONTINUAR A OPERAÇÃO DIGITE: 1\n")
 			leia(credito)
-			se(credito == 0){
+			se(credito > 1 ou credito < 0){
+				limpa()
+				escreva("\nNumero invalido!\n")
+				escreva("\nVoltando ao Menu!\n")
+				}
+			senao se(credito == 0){
+				limpa()
 				escreva("\nCancelado\n")
 				}
-			senao{	
+			senao se(credito == 1){
+			limpa()	
 			escreva("Escreva o valor a ser creditado: ")
 			leia(credito)
 			se(credito < 0){
@@ -119,7 +136,8 @@ programa //apague//
 			saldo += credito
 			movimentos++
 
-			escreva("\nSeu saldo agora é de R$: ", saldo,"\n")
+			escreva("\nSeu saldo agora é de R$: ", saldo)
+			escreva("\n\nSeu saldo para emprestimo é de R$: ", emprestimoF,"\n")
 				}
 			}
 		}
@@ -131,12 +149,19 @@ programa //apague//
 			escreva("\nSeu saldo para emprestimo é: R$ ",emprestimoF,"\n\n")
 
 			escreva("PARA CANCELAR A OPERAÇÃO DIGITE: 0\n")
-			escreva("PARA CONTINUAR A OPERAÇÃO DIGITE: 1 OU QUALQUER NUMERO\n")
+			escreva("PARA CONTINUAR A OPERAÇÃO DIGITE: 1\n")
 			leia(emprestimo)
-			se(emprestimo == 0){
+			se(emprestimo > 1 ou emprestimo < 0){
+				limpa()
+				escreva("\nNumero invalido!\n")
+				escreva("\nVoltando ao Menu!\n")
+				}
+			senao se(emprestimo == 0){
+				limpa()
 				escreva("\nCancelado\n")
 				}
-			senao{	
+			senao se(emprestimo == 1){	
+			limpa()
 			escreva("Escreva o valor de emprestimo: ")
 			leia(emprestimo)
 			
@@ -147,6 +172,7 @@ programa //apague//
 			senao se(emprestimo <= 10000.00){
 				
 				se(emprestimo + emprestimoS  >= 10000.01){
+				limpa()
 				escreva("\n\nValor insuficiente para emprestimo!!!\n\n")
 				}
 				senao{
@@ -162,6 +188,7 @@ programa //apague//
 			
 			}
 			senao{
+				limpa()
 				escreva("\n\nValor insuficiente para emprestimo!!!\n\n")
 				}
 				
@@ -177,9 +204,9 @@ programa //apague//
 			movimentos++
 			}
 		senao se(opcao2 == 4){
-			escreva("-----------------------------\n")
-			escreva("   Bem vindo ao Banco BNGM!\n")
-			escreva("-----------------------------\n")
+		escreva("-----------------------------------------\n")
+		escreva(" Bem vindo ao Banco BNGM! -- Grupo 02 -- \n")
+		escreva("-----------------------------------------\n")
 			pare
 			}
 		senao{
@@ -220,7 +247,7 @@ programa //apague//
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3797; 
+ * @POSICAO-CURSOR = 5575; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
