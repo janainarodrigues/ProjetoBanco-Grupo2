@@ -1,5 +1,6 @@
 programa //apague//
 {  //apague2
+	//apague3
 	inclua biblioteca Util
 	funcao inicio()
 	{	//Declaração de Variavel
@@ -168,7 +169,7 @@ programa //apague//
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 32; 
+ * @POSICAO-CURSOR = 43; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
