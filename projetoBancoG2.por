@@ -90,7 +90,7 @@ programa
 			limpa()
 			escreva("Escreva o valor a ser debitado: ")
 			leia(debito)
-			se(debito < 0){
+			se(debito <= 0){
 				escreva("\nDigite um valor positivo\n")
 				}
 			senao se(saldo - debito < 0){
@@ -130,7 +130,7 @@ programa
 			limpa()	
 			escreva("Escreva o valor a ser creditado: ")
 			leia(credito)
-			se(credito < 0){
+			se(credito <= 0){
 				escreva("\nDigite um valor positivo\n")
 			}
 			senao se(movimentos < 10){
@@ -166,7 +166,7 @@ programa
 			escreva("Escreva o valor de emprestimo: ")
 			leia(emprestimo)
 			
-			se(emprestimo < 0){
+			se(emprestimo <= 0){
 				escreva("\nDigite um valor positivo\n")
 				}
 			
@@ -253,7 +253,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 6454; 
+ * @POSICAO-CURSOR = 4676; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
