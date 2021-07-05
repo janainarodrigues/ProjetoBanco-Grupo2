@@ -1,4 +1,4 @@
-# ProjetoBanco-Grupo2
+# Banco Nascional Generation Midas
 
 ### Tecnologias usadas no do projeto
 
