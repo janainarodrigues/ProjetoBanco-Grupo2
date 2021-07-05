@@ -11,17 +11,17 @@ Para executar o projeto, basta clonar e abrir o arquivo dentro do programa Portu
 ### Funcionalidades
 
 - [x] Menu
-- [ ] Conta Poupança  -----   Janaina
-- [ ] Conta Corrente  -----   Valmir
-- [ ] Conta Empresarial ----   Felipe
-- [ ] Conta Estudantil ----   Enzo
-- [ ] Conta Especial   ----   Pietro
+- [X] Conta Poupança  -----   Janaina
+- [X] Conta Corrente  -----   Valmir
+- [X] Conta Empresarial ----   Felipe
+- [X] Conta Estudantil ----   Pietro
+- [X] Conta Especial   ----   Enzo
 
 ### Importante!
 
 Projeto desenvolvido no modulo de Lógica de Programação no curso de formação de desenvolvedores FullStack Jr. Java da GenerationBrasil.
 
-Ministrado por: Jessica Lopes e Ednilson-Nascimento 
+Ministrado por: Jessica Lopes e Ednilson Nascimento 
 
 
 
