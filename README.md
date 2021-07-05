@@ -1,4 +1,4 @@
-# Banco Nascional Generation Midas
+# Banco Nacional Generation Midas
 
 ### Tecnologias usadas no do projeto
 
